@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <title>BeeLog</title>
+</head>
+<body>
+    <div class="main">
+        <div class="navBar">
+            <h1><a href="#">BeeLog</a></h3>
+            <h2><a href="/new">Create Blog</a></h2>
+        </div>
+        <div class="mainBlog">
+        <% blogs.forEach(blog => { %>
+       <div class="blogCard">
+        <div class="blogImage">
+            <img src="<%= blog.image %>" alt="Picsum Images">
+        </div>
+        <div class="blogContent">
+            <h5><%= blog.title %></h5>
+            <p><%= blog.description %></p>
+        </div>
+        <div class="info">
+            <p><%= blog.author %></p>
+            <p><%= blog.created_on %></p>
+        </div>
+        <div class="blogAction">
+            <form action="/show/<%= blog.id %>" method="get">
+                <button class="seeButton" type="submit">See Blog</button>
+            </form>
+            <form action="/delete/<%= blog.id %>" method="post"  onsubmit="return confirm('Are You Sure?')" >
+                <button class="deleteButton" type="submit">Delete Blog</button>
+            </form>
+        </div>
+       </div>
+    <% }) %>
+    </div>
+    </div>
+</body>
+</html>

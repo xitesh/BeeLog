@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Blog</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+<body>
+    <form class="formBlog" action="/new" method="post">
+        <div class="input">
+            <label for="txtTitle">Title</label>
+            <input type="text" name="title" id="txtTitle" required>
+        </div>
+        <div class="input">
+            <label for="">Description</label>
+            <textarea name="description" id=""></textarea>
+        </div>
+        <div class="input">
+            <label for="Image">Image URL</label>
+            <input type="text" name="image" placeholder="https://..." required>
+        </div>
+        
+        <div class="input">
+            <label for="">Created On</label>
+            <input type="date" name="created_on" id="" required>
+        </div>
+        <div class="input">
+            <label for="">Author</label>
+            <input type="text" name="author" required>
+        </div>
+        <div class="input">
+            <input type="submit" value="Submit">
+        </div>
+    </form>
+</body>
+
+</html>
